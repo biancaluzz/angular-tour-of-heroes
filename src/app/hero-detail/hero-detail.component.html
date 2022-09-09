@@ -1,0 +1,15 @@
+<!--LA IDEA DE AÑADIR hero-detail ES PASARLE LA RESPONSABILIDAD DE LISTAR
+AL HÉROE SELECCIONADO A ESTE COMPONENTE, EN LUGAR DE heroes. SRP-->
+
+<!--ESTE IF FUNCIONA IGUAL QUE EL DE heroes LA UNICA MODIFICACION ES QUE CLARAMENTE
+RECORRE A PARTIR DE LA VARIABLE DEFINIDA EN .TS-->
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
